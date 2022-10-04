@@ -18,7 +18,6 @@ OPS SUMMARY:
 4) Use random.choice() and weight
 
 '''
-# STIL IN PROGRESS
 
 import random
 
@@ -26,31 +25,47 @@ occupation_file = open('occupations.csv', 'r')
 content = occupation_file.read()
 
 # ['occupation, percentage', 'occupation, percentage', ...]
-g = content.split('\n')
+occupation_list = content.split('\n')
 
-# [['occupation', 'percentage'], ['occupation', 'percentage'], ...]
-i = 0
-while i < len(g):
-    g[i] = g[i].split(',')
-    if len(g[i]) > 2:
-        index = 1
-        x = g[i]
-        while index < len(g[i]):
-            x[0] + x[index]
-            index += 1
-        x[0].strip()
+# remove the trailing whitespace
+occupation_list.remove('')
 
-    i += 1
+occupation_list.remove('Job Class,Percentage')
+occupation_list.remove('Total,99.8')
 
-# populating dictionary
+# separating occupation from percentage, returns the list ['occupation', percentage]
+def separate(str):
+    g = str.split(',')
+    # if the occupation contains a comma
+    if len(g) > 2:
+        i = 0
+        fixed_num = len(g)
+        s = ''
+        while i < fixed_num - 1:
+            s += g[i]
+            i += 1
+        g1 = []
+        g1.append(s.strip())
+        g1.append(float(g[-1]))
+        return g1
+    else:
+        g[0].strip()
+        g[1] = float(g[1])
+        return g
+
+ind = 0
+while ind < len(occupation_list):
+    occupation_list[ind] = separate(occupation_list[ind])
+    ind += 1
+
+# populating the dictionary
 d = {}
-j = 0
-while j < len(g):
-    y = g[index]
-    d[y[0]] = y[1].strip()
+index = 0
+while index < len(occupation_list):
+    inner_list = occupation_list[index]
+    d[inner_list[0]] = inner_list[1]
+    index += 1
 
-d.pop('Job Class')
-total = d.pop('Total').strip()
 values = list(d.values())
 keys = list(d.keys())
 
