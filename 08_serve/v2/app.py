@@ -1,6 +1,8 @@
 # Polymer Erasers
 # SoftDev
+# K08 -- Putting it Together -- flask, debug, new line
 # 2022-10-06
+# time spent: 0.8hrs
 
 from flask import Flask
 app = Flask(__name__) #create instance of class Flask

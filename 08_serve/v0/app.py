@@ -1,6 +1,8 @@
 # Polymer Erasers
 # SoftDev
+# K08 -- Putting it Together -- flask, debug, new line
 # 2022-10-06
+# time spent: 0.8hrs
 
 from flask import Flask
 app = Flask(__name__) # We think that it will be __main__
@@ -11,4 +13,3 @@ def hello_world():
     return "No hablo queso!"  # What the website will print
 
 app.run()  # running the script, without it the website will not show
-                

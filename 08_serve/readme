@@ -1,0 +1,12 @@
+Polymer Erasers
+SoftDev
+K08 -- Putting it Together -- flask, debug, new line
+2022-10-06
+time spent: 0.8hrs
+
+Notes:
+ - Our flask apps did not run in Thonny. This is what happened when we did:
+      What we saw in the shell:
+      * Restarting with stat
+      /usr/bin/python3: No module named thonny.plugins.cpython.app
+      We saw debugger is active in the terminal and the PIN: 760-007-819
