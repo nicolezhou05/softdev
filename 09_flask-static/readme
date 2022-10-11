@@ -1,0 +1,10 @@
+app.py
+Our prediction is that it will print "No hablo queso!"
+
+foo
+Prediction: When we access http://localhost:5000/static/foo this website will display contents of foo
+observation: It downloaded foo, the website still showed "No hablo queso!"
+
+foo.html
+Prediction: We think it will only show "Is this plaintext, though?" But we think it might also produce an error because it's not in a proper html tag
+observation: Our first prediction seems to be correct. We saw "Is this plaintext, though?"
