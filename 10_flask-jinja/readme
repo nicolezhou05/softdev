@@ -1,0 +1,16 @@
+general predictions:
+- title of page will be fooooo
+- each element in coll will be disp[alyed on a new line
+- % signifies the start of things that will be replaced
+- app.py defines the varaibles utilized in the template to replace them
+
+#Q0: What will happen if you remove render_template from this line? (log your prediction before you pull the trigger...)
+if we remove render_template from this line, some sort of error will be displayed on the page
+
+#Q1: Can all of your teammates confidently predict the URL to use to load this page?
+ip address/my_foist_template
+
+#Q2: What is the significance of each argument? Simplest, most concise answer best.
+ return render_template( 'model_tmplt.html', foo="fooooo", collection=coll) 
+ first arg: jinja-formatted template file
+ second and third arg: gives variables in template file meaning
