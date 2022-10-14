@@ -1,8 +1,24 @@
-general predictions:
+Polymer Erasers
+SoftDev
+K10 -- Just Plug It In -- templates jinja2 multiple_routes
+2022-10-13
+time spent: 0.3hrs
+
+DISCO:
+ - You can define multiple routes within the same app
+ - You can import multiple libraries in the same line using just a comma
+
+QCC:
+ - What does the {% signify in comparison to the {{
+ - How did jinja know that collection was a variable?
+ - Why did item need to be in two curly braces?
+ - Is jinja a part of flask? does flask utilize jinja?
+
+Predictions:
 - title of page will be fooooo
-- each element in coll will be disp[alyed on a new line
+- each element in coll will be displayed on a new line
 - % signifies the start of things that will be replaced
-- app.py defines the varaibles utilized in the template to replace them
+- app.py defines the variables utilized in the template to replace them
 
 #Q0: What will happen if you remove render_template from this line? (log your prediction before you pull the trigger...)
 if we remove render_template from this line, some sort of error will be displayed on the page
@@ -11,6 +27,20 @@ if we remove render_template from this line, some sort of error will be displaye
 ip address/my_foist_template
 
 #Q2: What is the significance of each argument? Simplest, most concise answer best.
- return render_template( 'model_tmplt.html', foo="fooooo", collection=coll) 
+ return render_template( 'model_tmplt.html', foo="fooooo", collection=coll)
  first arg: jinja-formatted template file
  second and third arg: gives variables in template file meaning
+
+ Results:
+- Our predictions were right.
+- The tab was named fooooo
+- The http://127.0.0.1:5000/ link showed us "No hablo queso!"
+- The http://127.0.0.1:5000/my_foist_template showed us:
+0
+1
+1
+2
+3
+5
+8
+- When we removed render_template from the import statement, we received a NameError (NameError: name 'render_template' is not defined)

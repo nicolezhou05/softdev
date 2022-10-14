@@ -1,8 +1,8 @@
 # Polymer Erasers
 # SoftDev
-# K10 -- Just Plug It In
+# K10 -- Just Plug It In -- templates jinja2 multiple_routes
 # 2022-10-13
-# time spent: 
+# time spent: 0.3hrs
 
 from flask import Flask, render_template #Q0: What will happen if you remove render_template from this line? (log your prediction before you pull the trigger...)
 app = Flask(__name__)
