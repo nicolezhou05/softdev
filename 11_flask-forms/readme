@@ -1,0 +1,103 @@
+Polymer Erasers
+SoftDev
+K11 -- Form(s) Like Voltron -- login forms flash
+2022-10-14
+time spent: 0.7hrs
+
+DISCO:
+0) You can link html forms to python scripts so that the user will be redirected to a new page
+1) request.arguments had a dictionary that was empty before the form submission. after the form submission, it contained data
+2) Flask stores a dictionary of the inputs in the html form:
+  The terminal outputted:
+      ImmutableMultiDict([('username', 'qweqwe'), ('sub1', 'Submit')])
+      ***DIAG: request.args['username']  ***
+      qweqwe
+      ***DIAG: request.args['sub1']  ***
+      Submit
+  This is in line with the html <input> elements
+    <input type="text" name="username">
+    <input type="submit" name="sub1">
+
+QCC:
+0) Where does it say "Submit Query" in app.py or index.html (HTML thing) Why does it show  SUbmit query?
+1) What does the methods=['GET', 'POST']) do? Where do we see POST? Our group did not encounter any POST statements.
+
+Predictions:
+ - The print statements will output to the terminal, not the website
+    - The print statements will print:
+        app -> "__main__"
+        request -> ?
+        request.args -> ?
+        request.headers -> ?
+ - The html code will look like:
+      Welcome (big)
+      Enter (less big)
+      username: (Area to input text)
+      sub1 (Buttom to submit answer)
+ - If we submit something in the form it will go to auth page and the link will be like /?query=answer
+ - The new print statements will print what you input into the form. Also we added a test, it will print ???
+ - print(request.args['username']) will work because /auth knows what username is while the root page does not
+ - Line 51 we predict will show an error because the get and post is for the form
+    @app.route("/auth" , methods=['GET', 'POST'])
+
+
+Outcomes:
+ - What was printed:
+    ***DIAG: this Flask obj ***
+    <Flask 'app'>
+    ***DIAG: request obj ***
+    <Request 'http://127.0.0.1:5000/' [GET]>
+    ***DIAG: request.args ***
+    ImmutableMultiDict([])
+    ***DIAG: request.headers ***
+    Host: 127.0.0.1:5000
+    User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/106.0
+    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+    Accept-Language: en-US,en;q=0.5
+    Accept-Encoding: gzip, deflate, br
+    Connection: keep-alive
+    Upgrade-Insecure-Requests: 1
+    Sec-Fetch-Dest: document
+    Sec-Fetch-Mode: navigate
+    Sec-Fetch-Site: none
+    Sec-Fetch-User: ?1
+ - what our url looked like after form submission: http://127.0.0.1:5000/auth?username=bob&sub1=Submit
+ - When we tried to print request.args['username'] in our root app, we receieved an error because at that point, it was not defined.
+ - What we saw when we printed request.args['username'] in our /auth app
+     ***DIAG: this Flask obj ***
+      <Flask 'app'>
+      ***DIAG: request obj ***
+      <Request 'http://127.0.0.1:5000/auth?username=bob&sub1=Submit' [GET]>
+      ***DIAG: request.args ***
+      ImmutableMultiDict([('username', 'bob'), ('sub1', 'Submit')])
+      ***DIAG: request.args['username']  ***
+      bob
+      ***DIAG: request.args['sub1']  ***
+      Submit
+      ***DIAG: request.headers ***
+      Host: 127.0.0.1:5000
+      Connection: keep-alive
+      Cache-Control: max-age=0
+      Sec-Ch-Ua: "Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"
+      Sec-Ch-Ua-Mobile: ?0
+      Sec-Ch-Ua-Platform: "macOS"
+      Upgrade-Insecure-Requests: 1
+      User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36
+      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+      Sec-Fetch-Site: same-origin
+      Sec-Fetch-Mode: navigate
+      Sec-Fetch-User: ?1
+      Sec-Fetch-Dest: document
+      Referer: http://127.0.0.1:5000/
+      Accept-Encoding: gzip, deflate, br
+      Accept-Language: en-US,en;q=0.9
+- Method not allowed error, created when add argument methods = [POST] to @app.route('/')
+    Method Not Allowed
+    The method is not allowed for the requested URL.
+
+
+
+To be done in 20 minuntes:
+Put method = thing after parameter afrgument inside the function call
+Set method to GET, POST and see what happens
+"Method not allowed" error: form- was set up to receive POST, you give it GET for example
