@@ -3,10 +3,22 @@ from flask import Flask, render_template, request, session
 
 app = Flask(__name__)    #create Flask object
 
+app.secret_key = 'JANitors_@1'
+
+
 
 @app.route("/", methods=['GET', 'POST'])
 def login_page():
-    if 
+    return render_template('login.html')
+
+
+@app.route("/login", methods=['GET', 'POST'])
+def response_page():
+    session['username'] = request.form.get('username')
+    if 'username' in session:
+        print(request.cookies.get('JANitors_@1'))
+        return render_template('response.html', user=request.form.get('username'))
+    return 'You are not logged in'
 
 # def disp_loginpage():
 #     print("\n\n\n")
