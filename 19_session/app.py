@@ -1,55 +1,48 @@
-from flask import Flask, render_template, request, session
+# JANitors
+# SoftDev
+# K19: Sessions Greetings
+# 2022-11-03
+# time spent: 2.5 hrs
+
+from flask import Flask, render_template, request, session, redirect
 
 
 app = Flask(__name__)    #create Flask object
 
 app.secret_key = 'JANitors_@1'
 
+our_username = 'janitors'
+our_password = 'verycool'
 
 
 @app.route("/", methods=['GET', 'POST'])
-def login_page():
+def starting():
+    if 'username' in session:
+        return render_template('response.html', user=our_username)
     return render_template('login.html')
 
 
-@app.route("/login", methods=['GET', 'POST'])
-def response_page():
-    session['username'] = request.form.get('username')
-    if 'username' in session:
-        print(request.cookies.get('JANitors_@1'))
-        return render_template('response.html', user=request.form.get('username'))
-    return 'You are not logged in'
+@app.route("/welcome", methods=['GET', 'POST'])
+def logged_in():
+    if request.form.get('user_name') == our_username and request.form.get('pswd') == our_password:
+        session['username'] = request.form.get('user_name')
+        return render_template('response.html', user=our_username)
+    # wrong username and password
+    elif request.form.get('user_name') != our_username and request.form.get('pswd') != our_password:
+        error_msg = "No such user exists"
+    # wrong username
+    elif request.form.get('user_name') != our_username:
+        error_msg = "Incorrect username"
+    # wrong password
+    elif request.form.get('pswd') != our_password:
+        error_msg = "Incorrect password"
+    return render_template('login.html', msg = error_msg)
 
-# def disp_loginpage():
-#     print("\n\n\n")
-#     print("***DIAG: this Flask obj ***")
-#     print(app)
-#     print("***DIAG: request obj ***")
-#     print(request)
-#     print("***DIAG: request.args ***")
-#     print(request.args)
-#     #print("***DIAG: request.args['username']  ***")
-#     #print(request.args['username'])
-#     print("***DIAG: request.headers ***")
-#     print(request.headers)
-#     return render_template( 'login.html' )
-# 
-# 
-# @app.route("/auth", methods=['GET', 'POST'])
-# def authenticate():
-#     print("\n\n\n")
-#     print("***DIAG: this Flask obj ***")
-#     print(app)
-#     print("***DIAG: request obj ***")
-#     print(request)
-#     print("***DIAG: request.args ***")
-#     print(request.args)
-#     #print("***DIAG: request.args['username']  ***")
-#     #print(request.args['username'])
-#     print("***DIAG: request.headers ***")
-#     print(request.headers)
-#     return render_template('response.html', user=request.args.get('username'), request_method=request.method)  #response to a form submission
 
+@app.route("/logout", methods=['GET', 'POST'])
+def logout():
+    session.pop('username')
+    return redirect("/")
 
 
 if __name__ == "__main__": #false if this file imported as module
