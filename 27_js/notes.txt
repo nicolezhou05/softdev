@@ -1,21 +1,20 @@
-Team Phantom Tollbooth :: Clyde Sinclair, Fierce Dragon
-SoftDev pd0
+Team Joyful Jalapenos :: Julia Lee, Nicole Zhou
+SoftDev pd7
 K27 -- Basic functions in JavaScript
 2023-04-03t
 
 DISCO
 -----------------------------------------------------------------
-* Ooooh, ___
-* Aaah-haa!  ____
-* ...
+* To create a function in js: function <func_name>(parameter1, parameter2,...) {instructions}
+* Semicolons are needed in js
+* To return a value in a js function, use return
+* If we want to comment in js, use //
+* We can type the test cases in the dev console and get the answers
 =================================================================
 
 QCC
 -----------------------------------------------------------------
-* Why...?
-* Huh?
-* Teh whah now?
-* ...
+* Connection between JavaScript and Scheme? Why are they similar?
 =================================================================
 
 
