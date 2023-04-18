@@ -1,0 +1,23 @@
+Team Joyful Jalapenos :: Julia Lee, Nicole Zhou
+SoftDev pd7
+K28 -- Getting more comfortable with the dev console and the DOM
+2023-04-17
+
+DISCO
+- You can have a list of classes in the html file.
+- By adding a string to the class, you are adding a class identifier for that element.
+- Depending on the order of the classes in the styling, you will only be able to visually see some of the changes.
+
+var <varName> = <function name>(<parameters>){
+    <code>
+    return ...
+};
+
+const <varName> = (<params>) => {
+    <code>
+    return ...
+};
+
+QCC:
+- Are there any benefits or detriments to using either form of writing anonymous functions?
+- Perhaps the benefits of using anonymous functions is so that you can store their functionality and use them elsewhere.

@@ -1,27 +1,7 @@
-/*
-   your PPTASK:
-   
-   Test drive each bit of code in this file,
-    and insert comments galore, indicating anything
-     you discover,
-    	have questions about,
-    		or otherwise deem notable.
-    		
-    		Write with your future self or teammates in mind.
-    		
-    		If you find yourself falling out of flow mode, consult 
-    		other teams
-    		MDN
-
-   A few comments have been pre-filled for you...
-   
-   (delete this block comment once you are done)
-*/
-
-// Team Phantom Tollbooth :: Clyde Sinclair, Fierce Dragon 
-// SoftDev pd0
+// Team Joyful Jalapenos :: Julia Lee, Nicole Zhou
+// SoftDev pd7
 // K28 -- Getting more comfortable with the dev console and the DOM
-// 2023-04-05w
+// 2023-04-17
 // --------------------------------------------------
 
 
@@ -39,8 +19,8 @@ var f = function(x) {
   return j+x;
 };
 
-
 //instantiate an object
+//If you type the object name in the consol, it will return the value of that object.
 var o = { 'name' : 'Thluffy',
           age : 1024,
           items : [10, 20, 30, 40],
@@ -50,21 +30,23 @@ var o = { 'name' : 'Thluffy',
           }
         };
 
-
-var addItem = function(text) {
+//In console: addItem(text)
+//The variable name acts like the function name
+var addItem = function(text) { //Adds an item to the end of the list with the value of the text you give.
   var list = document.getElementById("thelist");
-  var newitem = document.createElement("li");
+  var newitem = document.createElement("li"); //Creates a list element
   newitem.innerHTML = text;
   list.appendChild(newitem);
 };
 
-
+//Make sure to 0 index or else you will get a type error!
 var removeItem = function(n) {
-  var listitems = document.getElementsByTagName('li');
+  var listitems = document.getElementsByTagName('li'); //Creates a list of the items in the list with the tag li from the html page
   listitems[n].remove();
 };
 
-
+//Adds red to the list of classes for all of the elements in the html list.
+//Red will only be a visual change when green or blue are not already in the class list.
 var red = function() {
   var items = document.getElementsByTagName("li");
   for(var i = 0; i < items.length; i++) {
@@ -72,7 +54,9 @@ var red = function() {
   }
 };
 
-
+//Adds red to the class of all even elements in the list and blue to the class of odd ones.
+//Red will only be visible if the element does not already have blue or green in the class list.
+//Blue will always be visible if it is in the class list as long as .blue class is last in the styling.
 var stripe = function() {
   var items = document.getElementsByTagName("li");
   for(var i = 0; i < items.length; i++) {
@@ -85,15 +69,43 @@ var stripe = function() {
 };
 
 //insert your implementations here for...
-// FIB
-// FAC
+function fact(n) {
+    if (n < 2) {
+      return 1;
+    }
+    else {
+      return (n * fact(n - 1));
+    }
+  }
+
+// fibonacci
+function fib(n) {
+    if (n == 0) {
+        return 0;
+    }
+    else if (n == 1){
+        return 1;
+    }
+    return (fib(n - 1) + fib(n - 2))
+}
 // GCD
+function gcd(a,b) {
+  if (a % b === 0){
+    return b;
+  }
+  return gcd(b, a%b); //This is too much math for me T-T
+}
 
 // In addition to the style shown above,
 //  you are encouraged to test drive the "arrow function syntax" as shown below.
 //  Note anything notable.
 const myFxn = (param1, param2) => {
-  // body
+  var retVal = param1*param2
   return retVal;
 };
 
+//Locates element with "demo" as the id and replaces value with the given value.
+document.getElementById("fact").innerHTML = "fact(4) = " + fact(4);
+document.getElementById("fib").innerHTML = "fib(4) = " + fib(4);
+document.getElementById("gcd").innerHTML = "gcd(24,20) = " + gcd(24,20);
+document.getElementById("mult").innerHTML = "mult(2,4) = " + myFxn(2,4);
