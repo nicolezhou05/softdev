@@ -1,4 +1,4 @@
-// Team ::
+// Nicole Zhou
 // SoftDev pd7
 // K28 -- More Javascript
 // 2023-04-20
@@ -110,17 +110,23 @@ const myFxn = (param1, param2) => {
 // document.getElementById("gcd").innerHTML = "gcd(24,20) = " + gcd(24,20);
 // document.getElementById("mult").innerHTML = "mult(2,4) = " + myFxn(2,4);
 
-var dasbut = document.getElementById("fxn");
-dasbut = addEventListener('click', displayFxn);
-
 function factTest() {
     addItem("fact(4) ==> " + fact(4));
 }
+
+var actFact = document.getElementById("factfxn");
+actFact.addEventListener('click', factTest);
 
 function fibTest() {
     addItem("fib(4) ==> " + fib(4));
 }
 
+var actFib = document.getElementById("fibfxn");
+actFib.addEventListener('click', fibTest);
+
 function gcdTest() {
     addItem("gcd(20, 24) ==> " + gcd(20, 24));
 }
+
+var actGcd = document.getElementById("gcdfxn");
+actGcd.addEventListener('click', gcdTest);

@@ -1,14 +1,15 @@
-Team ::
+Nicole Zhou
 SoftDev pd7
 K28 -- More JavaScript
 2023-04-20
 
 DISCO
 -----------------------------------------------------------------
-* 
+* The console is a great place to discover and help with bugs
+* When calling the function inside of addEventListener, we can't use ()
 =================================================================
 
 QCC
 -----------------------------------------------------------------
-* 
+* How do we call functions inside addEventListener so that we can choose any parameter we want?
 =================================================================
