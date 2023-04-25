@@ -1,0 +1,8 @@
+Team Joyful Jalapenos :: Julia Lee, Nicole Zhou
+SoftDev pd7
+K30 -- canvas based JS drawing
+2023-04-24
+
+DISCO
+- Always use the console!
+- Check the MDN!
