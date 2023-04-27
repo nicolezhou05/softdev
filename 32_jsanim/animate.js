@@ -67,3 +67,13 @@ var dvdLogoSetup = function() {
     };
     dvdLogo();
 }
+
+var stopIt = () => {
+    console.log("stopIt invoked...");
+    console.log(requestID);
+    window.cancelAnimationFrame(requestID);
+}
+
+dotButton.addEventListener("click", drawDot);
+stopButton.addEventListener("click", stopIt);
+dvdButton.addEventListener("click", dvdLogoSetup);
