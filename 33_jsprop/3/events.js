@@ -9,6 +9,7 @@ var clicky = function(e) {
   alert( this.innerHTML );
   //Q: What will happen when next line is uncommented?
   //e.stopPropagation();
+  //A: Only table was shown
 };
 
 for (var x=0; x < tds.length; x++) {
@@ -22,14 +23,10 @@ for (x=0; x < trs.length; x++) {
 //Predict, then test...
 //Q: What effect does the boolean arg have?
 //   (Leave exactly 1 version uncommented to test...)
+//A: Changes the order of the arguments shown
 
 table.addEventListener('click', clicky, true); //table,td,tr
 //table.addEventListener('click', clicky, false); //td,tr,table
 
 // Q: When user clicks on a cell, in what order will the pop-ups appear?
-
-
-// What might be rendered:
-// Behavior predictions:
-
-// What is observed:
+// A: Table, td, tr
