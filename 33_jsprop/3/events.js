@@ -23,13 +23,13 @@ for (x=0; x < trs.length; x++) {
 //Q: What effect does the boolean arg have?
 //   (Leave exactly 1 version uncommented to test...)
 
-table.addEventListener('click', clicky, true);
-//table.addEventListener('click', clicky, false);
+table.addEventListener('click', clicky, true); //table,td,tr
+//table.addEventListener('click', clicky, false); //td,tr,table
 
 // Q: When user clicks on a cell, in what order will the pop-ups appear?
 
 
-// What might be rendered: 
-// Behavior predictions: 
+// What might be rendered:
+// Behavior predictions:
 
 // What is observed:
