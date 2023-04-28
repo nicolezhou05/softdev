@@ -4,7 +4,6 @@ K33
 2023-04-27
 
 DISCO:
-*
-
-QCC:
-* 
+- stopPropagation() only allow the first function to be called and prevents any functions after from being called
+- Bubbling: inside to outside tags
+- Capture: outside to inside tags
