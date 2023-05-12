@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>TeX+LaTeX</title>
+  </head>
+
+  <body>
+    <h2>What is TeX and LaTeX?</h2>
+    <p>They are typesetting systems. Typesetting means the way text is arranged and composed.</p>
+    <p>TeX was developed by Donald Knuth and released in 1978. Huge flexibility, but complex.
+      In 1980s, Leslie Lamport used TeX as a base and added more features to create LaTeX (sometimes
+      called "Lamport-TeX").</p>
+    <p>Today they are widely used for mathematics, computer science, economics, and so on.</p>
+
+    <h2>Download</h2>
+    <ul>
+      <li>TeX Live for Linux</li>
+      <li>MiKTeX for Windows</li>
+      <li>MacTeX for MacOS</li>
+    </ul>
+    <p>You need a front end to edit and preview. A few of them are TeXwork and Texmaker.</p>
+    <p>You can also use online editors such as <a href="https://www.overleaf.com/">Overleaf</a>!</p>
+
+    <h2>Converting</h2>
+    <p>LaTeX documents are saved as a .tex file. Compiling would output .dvi, .ps (postscript),
+      or .pdf documents.</p>
+    <p>Most editors should have a button where you can press to compile your file. Or you can
+      use the command line.</p>
+    <p><code>latex [filename].tex</code> would compile <code>[filename].tex</code> and output <code>[filename].dvi</code></p>
+    <p><code>pdflatex [filename].tex</code> would compile <code>[filename].tex</code> and output <code>[filename].pdf</code></p>
+
+    <h2>General format (LaTeX)</h2>
+      <pre>
+        <code>
+\documentclass[options]{class}
+...
+\begin{document}
+...
+\end{document}
+        </code>
+      </pre>
+
+    <h3>Preamble</h3>
+    <p>The part before we begin the document is called the preamble. It defines the overall format of the document.</p>
+    <p><code>\documentclass[options]{class}</code></p>
+    <ul>
+      <li>Must be put in the beginning of each file</li>
+      <li><code>[options]</code> helps customize the document as desired.
+        <ul>
+          <li>This is optional.</li>
+          <li>If more than one, separate using commas.</li>
+          <li>Change font size here. Default is 10pt.</li>
+        </ul>
+      </li>
+      <li><code>class</code> indicates the appearance of the document (ex: article, letter, book, etc.).</li>
+      <li>Example: <code>\documentclass[11pt,a4paper]{article}</code></li>
+    </ul>
+
+    <p>Between <code>\documentclass[options]{class}</code> and <code>\begin{document}</code></p>
+    <ul>
+      <li>Any packages that you want to use, </li>
+      <li>To include title, author, and date:
+        <ul>
+          <li><code>\title{...}</code></li>
+          <li><code>\author{...}</code></li>
+          <li><code>\date{...}</code>
+            <ul>
+              <li>You can put any date you want, or you can use the date which you compiled the file by typing:
+                <code>\date{\today}</code>
+              </li>
+            </ul>
+          </li>
+          <li>Remember to put <code>\maketitle</code> inside the body in order to display the author, title, and date!</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>Body</h3>
+    <p>This is in between <code>\begin{document}</code> and <code>\end{document}</code>. This is where you put
+    whatever contents you want inside the document. If you want some text, directly type it in this section.</p>
+
+    <h2>Links</h2>
+    <p>Check out this <a href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">tutorial</a> from Overleaf!</p>
+</html>
